@@ -4,44 +4,47 @@
 #include <iostream>
 
 using namespace std;
+
+
+void operators(int* a, int* b, int* res); void printBtwAddr(int* a, int* b);
 int main()
 {
 
-    const int arrSize = 8;
-    int intArr[arrSize] = { 1, 2, 3, 4, 5, 6, 7, 8 }, * pIntArr = intArr;
+    //const int arrSize = 8;
+    //int intArr[arrSize] = { 1, 2, 3, 4, 5, 6, 7, 8 }, * pIntArr = intArr;
 
 
-    char initCharArr[arrSize] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
-    char* pcharArr = (char*)malloc(8);
+    //char initCharArr[arrSize] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
+    //char* pcharArr = (char*)malloc(8);
 
-    for (int i = 0; i < arrSize; i++) {
-        *(pcharArr + i) = initCharArr[i];
-    }
-    cout << pcharArr << endl;
+    //for (int i = 0; i < arrSize; i++) {
+    //    *(pcharArr + i) = initCharArr[i];
+    //}
+    //cout << pcharArr << endl;
 
-    string str = "test123";
-    for (int i = 0; i <= str.length(); i++) {
-        cout << "str[" << i << "] = " << str[i] << endl;
-    }
-
-
-    //char charArr[arrSize + 1] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '\0' }, * pCharArr = charArr;
-    //cout << charArSize << endl << pArr << endl << endl;
-
-    string strArr[arrSize] = { "test1", "test2", "test3", "test4", "test5", "test6", "test7", "test8" }, * pStrArr = strArr;
-    //cout << *strArr << endl << *pStrArr << endl;
+    //string str = "test123";
+    //for (int i = 0; i <= str.length(); i++) {
+    //    cout << "str[" << i << "] = " << str[i] << endl;
+    //}
 
 
-    int num = 5;
-    int* pnum = &num;
-    //cout << *pnum;
+    ////char charArr[arrSize + 1] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', '\0' }, * pCharArr = charArr;
+    ////cout << charArSize << endl << pArr << endl << endl;
 
-    cout << "int: " << pnum << endl;
-    cout << "int Arr: " << intArr << endl;
-    //cout << "char Arr: " << charArr << endl;
-    cout << "str Arr: " << strArr << endl;
+    //string strArr[arrSize] = { "test1", "test2", "test3", "test4", "test5", "test6", "test7", "test8" }, * pStrArr = strArr;
+    ////cout << *strArr << endl << *pStrArr << endl;
 
-    cout << "\v" << "test";
+
+    //int num = 5;
+    //int* pnum = &num;
+    ////cout << *pnum;
+
+    //cout << "int: " << pnum << endl;
+    //cout << "int Arr: " << intArr << endl;
+    ////cout << "char Arr: " << charArr << endl;
+    //cout << "str Arr: " << strArr << endl;
+
+    //cout << "\v" << "test";
 
 
 
@@ -73,11 +76,47 @@ int main()
     //cout << *pNewArr << endl;
 
 
+    //int a = 3; 
+    //int b = 3;
+    //int res = 0;
 
+    //cout << res << endl;
+    //operators(&a, &b, &res);
+    //cout << res;
+
+
+
+    int a = 0;
+    int b = 0;
+    //int hexNum = 0xF;
+
+    //uintptr_t aDecAddress = reinterpret_cast <uintptr_t> (&a);
+    //uintptr_t bDecAddress = reinterpret_cast <uintptr_t> (&b);
+
+    int arr[2] = { 0, 0 };
+    //cout << dec << &b;
+    //cout << reinterpret_cast <uintptr_t> (&a) << " " << reinterpret_cast <uintptr_t> (&b) << endl;
+    cout << &a << " " << &b << endl;
+    printBtwAddr(&a, &b);
+    //cout << sizeof(uintptr_t) << endl;
+    //cout << reinterpret_cast <uintptr_t> (&arr[0]) << " " << reinterpret_cast <uintptr_t> (&arr[1]);
+
+    system("pause");
     return 0;
 }
 
 
+void operators(int* a, int* b, int* res) {
+    *res = *a << *b;
+}
+
+
+void printBtwAddr(int* a, int* b) {
+    //uintptr_t paddress1 = reinterpret_cast <uintptr_t> (&a);
+    //uintptr_t paddress2 = reinterpret_cast <uintptr_t> (&b);
+    cout << *&a << " " << *&b << endl;
+    //cout << paddress1 << " " << paddress2 << endl;
+}
 
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
