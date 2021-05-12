@@ -112,9 +112,24 @@ void operators(int* a, int* b, int* res) {
 
 
 void printBtwAddr(int* a, int* b) {
-    //uintptr_t paddress1 = reinterpret_cast <uintptr_t> (&a);
-    //uintptr_t paddress2 = reinterpret_cast <uintptr_t> (&b);
-    cout << *&a << " " << *&b << endl;
+
+    //Выводим адресса в int type
+    uintptr_t pAddr1 = reinterpret_cast <uintptr_t> (*&a);
+    uintptr_t pAddr2 = reinterpret_cast <uintptr_t> (*&b);
+    cout << pAddr1 << " " << pAddr2 << endl;
+
+    uintptr_t delta = pAddr1 - pAddr2;
+
+    uintptr_t minAddrDec = pAddr1 < pAddr2 ? pAddr1 : pAddr2;
+    uintptr_t maxAddrDec = pAddr1 >= pAddr2 ? pAddr1 : pAddr2;
+
+    char* pTmp = sizeof(*a) + (char*) *a;
+    cout << pTmp;
+    //for (; minAddrDec + sizeof(*a) < maxAddrDec - 1;) {
+    //    char* pTmp = &
+    //    cout << 
+    //}
+
     //cout << paddress1 << " " << paddress2 << endl;
 }
 
